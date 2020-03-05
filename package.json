@@ -1,0 +1,30 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "Here is a basic project that helps to look into Mongo collections",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanOtalora/mongoSpelunky.git"
+  },
+  "keywords": [
+    "mongo"
+  ],
+  "author": "Juan Otalora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuanOtalora/mongoSpelunky/issues"
+  },
+  "homepage": "https://github.com/JuanOtalora/mongoSpelunky#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.4",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7"
+  }
+}
