@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
 	<title>Mongo Spelunky</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+	<link href="https://fonts.googleapis.com/css?family=Darker+Grotesque:400,500,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-	<h1>Si esta funcionando</h1>
-
-	<ul id="dbs">
-            <% databases.forEach( (databases) => { %>
-            <li><%= databases.name %>> Details </a></li>
+	<%- include("./header.ejs") %>	
+	<div class="Browser">
+		<p>Browse DB</p>
+	</div>
+	<div class="backgroundColor">
+		<div class="searcherSide">
+			<div class="searcher2">
+				<button id="buttonSearch2" type="button">
+				</button>
+				<input type="text" name="searcherI" placeholder="Search Databases" id="inputSearch2">
+				<hr class="grey">
+			</div>
+			<div class="category">
+				<p class="titleC">Empty Dbs</p>
+				<hr class="grey">
+				<form>
+					<div class="flexCheckC">
+						<input class="checkC" type="checkbox" id="notEmpty" name="notEmpty" value="notEmpty">
+  						<label class="labelCheck" for="notEmpty">Empty</label><br>
+  					</div>
+				</form>
+			</div>
+			<div class="category">
+				<p class="titleC">Status</p>
+				<hr class="grey">
+			</div>
+		</div>
+		<div id="created" class="showCollections">
+			<div id="ejemplo">
+            <% dbSearched.forEach( (databases) => { %>
+            <div class="dbs">
+            <% if (databases.empty) { %>
+				<img src="./img/empty.svg" width="60px" height="60px" class="imageCard">
+            <% }else{ %>
+            	<img src="./img/full.svg" width="60px;" height="60px" class="imageCard">
+             <% } %>	
+            	<p class="titleCard"><%= databases.name %></p>
+            	<p class="pMongo">A mongo DB</p>
+            	<button onClick="goToDB(this.id)" id=<%= databases.name %> class="buttonDB">Go to DB</button>
+            </div>	
             <% }) %>
-    </ul>
+		</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="./js/database.js"></script>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

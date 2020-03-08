@@ -16,15 +16,13 @@ function MongoUtils() {
   mu.databases.findAll = query => 
     mu.connect().then(client => {
     const prueba = client.db().admin().listDatabases(); // Returns a promise that will resolve to the list of databases
-    prueba.then(dbs => {
+    return prueba.then(dbs => {
       let arrayDbs = dbs;
       console.log(arrayDbs);
-      return arrayDbs
-      
+      return arrayDbs;
     }).finally(() => client.close());
-   
+
   })
-  
     
   mu.databases.findOne = id => 
     mu.connect().then(client => 
