@@ -7,11 +7,40 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Darker+Grotesque:400,500,700&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
-
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
 
 </head>
-<%- include("./header.ejs") %>
-<div>
-	Algo
+<div class="marginH">
+	<div class="header">
+		<div class="logoS">
+			<p id="logo">Spelunky</p>
+		</div>
+		<div class="searcher">
+			<button id="buttonSearch" type="button">
+				<img src="../img/searcher.svg" height="20px" width="100%">
+			</button>
+			<input type="text" name="searcherI" placeholder="Search Databases" id="inputSearch">
+		</div>
+		<a href="" id="normalHeader">About</a>
+		<a href="" id="purpleHeader">How it works</a>
+	</div>
 </div>
+<div class="greyArea">
+	<div class="leftColumn">
+		<img src="../img/db.svg" width="110px" height="110px">
+		<p class="dbService">DATABASE SERVICE</p>
+		<p class="titleDBName" id="dbName"><%= dbName %></p>
+		<p class="descr">Here is your DB, you can click on the show collections button, to see its collections <br>
+		and then you can see some of its individual items.</p>
+	</div>
+	<div class="rightColumn">
+		<div class="flexButtons">
+			<p class="semiTitle">Collections</p>
+			<button id="seeCols">See your Collections</button>
+		</div>
+		<div id="collectionsToSee">		
+		</div>
+	</div>	
+</div>
+<script type="text/javascript" src="../js/collections.js"></script>

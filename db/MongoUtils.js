@@ -53,7 +53,29 @@ function MongoUtils() {
       })
       .finally(() => client.close());
 
+  mu.collections.findAll = dbName => 
+    mu.connect().then(client => {
+    const prueba = client.db(dbName).listCollections().toArray(); // Returns a promise that will resolve to the list of databases
+    return prueba.then(dbs => {
+      let arrayDbs = dbs;
+      console.log(arrayDbs);
+      return arrayDbs;
+    }).finally(() => client.close());
 
+  })      
+
+  mu.collections.findAllRecords = (dbid, colid ) =>
+    mu.connect().then(client => {
+      const cocktailCol = client.db(dbid).collection(colid);
+
+      // when searching by id we need to create an ObjectID
+      return cocktailCol
+        .find()
+        .limit(20)
+        .sort({ timestamp: -1 })
+        .toArray()
+        .finally(() => client.close());
+    });
 
   return mu;
 

@@ -113,7 +113,6 @@ body{
 
 .grey{
 	color: #FFF8FD;
-
 }
 
 .showCollections{
@@ -241,5 +240,145 @@ body{
 	flex-direction: row;
 	flex: 3;
 	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+
+.greyArea{
+	display: flex;
+	background-color: #F7F8FB;
+	margin-top: 80px;
+	padding-left: 120px;
+	padding-right: 120px;
+	min-height: 1000px;
+	max-height: 100%;
+}
+
+
+
+.leftColumn{
+	display: flex;
+	flex: 1;
+	margin-top: 35px;
+	flex-direction: column;
+
+}
+
+
+.dbService{
+	font-family: 'Darker Grotesque', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	color: grey;
+	margin: 0px;
+	margin-top: 10px;
+}
+
+.titleDBName{
+	font-family: 'Darker Grotesque', sans-serif;
+	font-weight: bold;
+	font-size: 34px;
+	color: black;
+	margin: 0px;
+}
+
+.rightColumn{
+	margin-top: 35px;
+	display: flex;
+	flex: 3;
+	flex-direction: column;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.descr{
+	font-family: 'Darker Grotesque', sans-serif;
+	font-size: 16px;
+	color: black;
+}
+
+.flexButtons{
+	display: flex;
+	border-bottom: 5px solid #5EBF6D;
+	align-items: center;
+	justify-content: space-between;
+	
+}
+
+.semiTitle{
+	font-family: 'Darker Grotesque', sans-serif;
+	font-weight: bold;
+	font-size: 32px;
+	color: black;
+}
+
+#seeCols{
+	background-color: #5EBF6D;
+	color: white;
+	font-family: 'Darker Grotesque', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	height: 50px;
+	width: 200px;
+	border-radius: 20px;
+	-webkit-transition: background-color 0.5s ease-out;
+  	-moz-transition: background-color 0.5s ease-out;
+  	-o-transition: background-color 0.5s ease-out;
+  	transition: background-color 0.5s ease-out;
+}
+
+#seeCols:hover{
+	background-color: white;
+	color: #5EBF6D;
+	-webkit-transition: background-color 0.5s ease-out;
+  	-moz-transition: background-color 0.5s ease-out;
+  	-o-transition: background-color 0.5s ease-out;
+  	transition: background-color 0.5s ease-out;
+}
+
+.collectionC {
+	font-family: 'Darker Grotesque', sans-serif;
+	font-weight: bold;
+	font-size: 32px;
+	color: black;
+}
+
+.collectionDiv{
+	display: flex;
+	align-items: center;
+	border-bottom: 5px solid #5147E2;
+	justify-content: space-between;
+}
+
+.buttonCollection{
+	background-color: #5147E2;
+	color: white;
+	font-family: 'Darker Grotesque', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	height: 50px;
+	width: 200px;
+	border-radius: 20px;
+	-webkit-transition: background-color 0.5s ease-out;
+  	-moz-transition: background-color 0.5s ease-out;
+  	-o-transition: background-color 0.5s ease-out;
+  	transition: background-color 0.5s ease-out;
+}
+
+.buttonCollection:hover{
+	background-color: white;
+	color: #5147E2;
+	-webkit-transition: background-color 0.5s ease-out;
+  	-moz-transition: background-color 0.5s ease-out;
+  	-o-transition: background-color 0.5s ease-out;
+  	transition: background-color 0.5s ease-out;
+}
+
+
+.recordDown{
+	display: flex;
+	flex: 3;
+	flex-direction: row;
+	justify-content: space-between;
 	flex-wrap: wrap;
 }

@@ -28,8 +28,9 @@ router.get("/dbSearched", function(req, res) {
   });
 });
 
-router.get("/db", (req, res)=>{
-  res.render('database', {})
+router.get("/dbSearched/db", (req, res)=>{
+	const dbName = req.query.dbName;
+  res.render('database', {dbName})
 })
 
 router.get("/dbSearched/db", function(req, res) {
@@ -46,10 +47,35 @@ router.get("/dbSearched/db", function(req, res) {
   		}
   	}
   	console.log(y);
-    //return res.render('database', {y})
-    return res.redirect("/db");
+    return res.send(y);
   });
 });
+
+router.get("/dbSearched/db/collections", function(req, res){
+	const dbName = req.query.dbName;
+	console.log(dbName);
+	console.log("/----------------------------");
+	mu.collections.findAll(dbName).then(collections => {
+		console.log(collections);
+		return res.send(collections);
+	})
+
+})
+
+
+router.get("/dbSearched/db/col", function(req, res){
+	const dbName = req.query.dbName;
+	const colName = req.query.colName;
+	console.log(dbName);
+	console.log("/----------------------------");
+	console.log(colName);
+	mu.collections.findAllRecords(dbName, colName).then(records =>{
+		console.log(records);
+		return res.send(records);
+	})
+	
+
+})
 
 
 

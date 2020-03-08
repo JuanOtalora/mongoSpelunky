@@ -50,8 +50,12 @@ function goToDB (id){
 	}), {
     method: 'GET'
   	}).then(function(response) {
+  		console.log(response); 
+  		window.location.href = response.url;
   	console.log(response);    
   		}).then(function(data) {
+
   			console.log(data);
   		});
+
 }
